@@ -12,3 +12,6 @@ def test_greet():
     clier.start()
 
     _input_mock.restore()
+
+if __name__=="__main__":
+    test_greet()

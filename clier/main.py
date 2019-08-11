@@ -60,7 +60,8 @@ def input_loop():
         method_name, args = parse_command(command)
         method = COMMANDS.get(method_name)
         if method is None:
-            print(f"Wrong method {method_name}")
+            print(f"Command `{method_name}` not found. Type help to display available commands.")
+            continue
         try:
             method( *args )
         except Exception as e:
