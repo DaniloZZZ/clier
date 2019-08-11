@@ -3,7 +3,7 @@ import time
 COMMANDS = { }
 
 def _help():
-    """ Print help info about methods """
+    """Print help info about commands"""
     for fname, f in COMMANDS.items():
         docstr = f.__doc__
         info = fname
@@ -11,10 +11,10 @@ def _help():
             info += ':\t' + docstr
         print(info)
 
-COMMANDS['help']=_help
+COMMANDS['help'] = _help
 
 def command(func):
-    """ Just a decorator for `add_func()`"""
+    """Just a decorator for `add_func()`"""
     add_command(func)
     return func
 
@@ -40,6 +40,12 @@ def start():
 # Input-related methods
 # --------
 def parse_command(comm):
+    """
+    Parse a string to command name and arguments.
+
+    :param comm: A string consisting 1 or more words separated by spaces and an optional json as the last word 
+    :return: 2-tuple: command name, args list
+    """
     # Just perform a command without args
     if ' ' not in comm:
         return comm, []
@@ -65,8 +71,5 @@ def input_loop():
         try:
             method( *args )
         except Exception as e:
-            print("Error executing", str(e))
+            print("Error executing:", str(e))
         time.sleep(0)
-# --------
-
-
