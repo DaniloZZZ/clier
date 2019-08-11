@@ -14,6 +14,7 @@ setup(
     install_requires = ['loguru'],
     setup_requires = ['pytest-runner'],
     tests_require  = ['pytest'],
+    url = 'https://github.com/DaniloZZZ/clier',
 
     test_suite='tests',
 )
