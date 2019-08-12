@@ -34,9 +34,11 @@ def start():
     try:
         input_loop()
     except KeyboardInterrupt:
-        print("exiting")
+        print("Bye")
         return
-
+    except EOFError:
+        print("Done")
+        return
 # Input-related methods
 # --------
 def parse_command(comm):
