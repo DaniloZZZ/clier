@@ -5,6 +5,7 @@ import inspect
 def convert_annotated_args(func, args):
     anames = inspect.getfullargspec(func).args
     new_args = []
+    #TODO: this is not an optimal way. If anames is {} were still running
     for arg, argname in zip(args, anames):
         ann = func.__annotations__.get(argname)
         if ann:
