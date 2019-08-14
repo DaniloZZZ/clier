@@ -4,7 +4,7 @@ from os.path import join, dirname
 setup(
     name='clier',
     description='Makes interactive cli programs of modules',
-    version='0.1',
+    version='0.2',
     license='MIT',
 
     packages=find_packages(),

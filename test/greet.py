@@ -13,6 +13,7 @@ def test_greet():
     _input_mock.restore()
 
 def test_fact():
+    _input_mock.sequence( ['factorial 10', 'help' ])
     @clier.command
     def factorial(x: int):
         f = 1
@@ -20,7 +21,7 @@ def test_fact():
             f*=x
             x-=1
         return f
-    #clier.start()
+    clier.start()
 
 if __name__=="__main__":
     test_greet()
